@@ -3,8 +3,11 @@ from .models import Post
 
 
 def home(request):
+    context = {
+        'posts': Post.objects.all() # blog data 
+    }
     
-    return render(request, 'blog/home.html', {'title': 'Home'})
+    return render(request, 'blog/home.html', context)
 
 
 def blog(request):
